@@ -18,7 +18,7 @@ public class ContainerInstance {
      * JMX port of the current Petals ESB container. A deployment property can be used. Each container (from topology
      * model) without a default JMX port must have one defined in this model.
      */
-    private int jmxPort;
+    private Integer jmxPort;
 
     /**
      * JMX username of the current Petals ESB container. A deployment property can be used. Each container (from
@@ -45,16 +45,26 @@ public class ContainerInstance {
         this.reference = reference;
     }
 
-    public int getJmxPort() {
-        return jmxPort;
+    public Integer getJmxPort() {
+        if (jmxPort != null) {
+            return jmxPort;
+
+        }
+
+        return reference.getDefaultJmxPort();
     }
 
-    public void setJmxPort(final int jmxPort) {
+    public void setJmxPort(final Integer jmxPort) {
         this.jmxPort = jmxPort;
     }
 
     public String getJmxUser() {
-        return jmxUser;
+        if (jmxUser != null) {
+            return jmxUser;
+
+        }
+
+        return reference.getDefaultJmxUser();
     }
 
     public void setJmxUser(final String jmxUser) {
@@ -62,7 +72,12 @@ public class ContainerInstance {
     }
 
     public String getJmxPassword() {
-        return jmxPassword;
+        if (jmxPassword != null) {
+            return jmxPassword;
+
+        }
+
+        return reference.getDefaultJmxPassword();
     }
 
     public void setJmxPassword(final String jmxPassword) {

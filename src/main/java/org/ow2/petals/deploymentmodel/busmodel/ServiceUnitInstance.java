@@ -1,7 +1,5 @@
 package org.ow2.petals.deploymentmodel.busmodel;
 
-import java.awt.Container;
-
 import org.ow2.petals.deploymentmodel.serviceunitmodel.ServiceUnit;
 
 /**
@@ -11,14 +9,14 @@ import org.ow2.petals.deploymentmodel.serviceunitmodel.ServiceUnit;
  */
 public class ServiceUnitInstance {
     /**
-     * Reference to a service-unit of the service-units object model
+     * Reference to a service-unit of the service-units object model.
      */
     private ServiceUnit reference;
 
     /**
-     * Reference to a container of the topology object model
+     * Reference to a container instance on the bus model.
      */
-    private Container containerReference;
+    private ContainerInstance containerInstanceReference;
 
     public ServiceUnit getReference() {
         return reference;
@@ -28,11 +26,11 @@ public class ServiceUnitInstance {
         this.reference = reference;
     }
 
-    public Container getContainerReference() {
-        return containerReference;
+    public ContainerInstance getContainerInstanceReference() {
+        return containerInstanceReference;
     }
 
-    public void setContainerReference(final Container containerReference) {
-        this.containerReference = containerReference;
+    public void setContainerInstanceReference(final ContainerInstance containerInstanceReference) {
+        this.containerInstanceReference = containerInstanceReference;
     }
 }
